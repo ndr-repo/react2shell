@@ -10,11 +10,32 @@ Resources for red team operators to discover &amp; exploit react2shell vulnerabi
 
 - [maple3142 RCE PoC](https://gist.github.com/maple3142/48bc9393f45e068cf8c90ab865c0f5f3)
 
-## Related Exploit Chains
-
-### Trend Micro Research
+## Related Exploit Chain - Trend Micro Research
 
 ![TrendMicro-ExploitChain](https://www.trendmicro.com/content/dam/trendmicro/global/en/research/25/l/cve-2025-55182-analysis-poc-itw/React2Shell-Infection-Chain.png)
+
+### base64 encoding bash one-liners
+
+```
+echo “<bash one-liner>” | base64
+```
+
+### Running base64 encoded bash one-liners
+
+```
+echo “<base64 encoded one-liner>” | base64 -d | bash
+```
+
+### example - creating a host fingerprinting one-liner: 
+```
+echo "uname -a && id && ip address |  grep -oP '.*[\/][0-9].*' " | base64
+```
+
+### example - running base64 encoded host fingerprinting one-liner:
+
+```
+echo "dW5hbWUgLWEgJiYgaWQgJiYgaXAgYWRkcmVzcyB8ICBncmVwIC1vUCAnLipbXC9dWzAtOV0uKicgCg==" | base64 -d | bash
+```
 
 ## Related Industry Articles
 - [SonicWall Capture Labs](https://www.sonicwall.com/blog/react2shell-cve-2025-55182-critical-unauthenticated-rce)
