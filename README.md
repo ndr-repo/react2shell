@@ -28,13 +28,13 @@ echo “<base64 encoded one-liner>” | base64 -d | bash
 
 ### example - creating a host fingerprinting one-liner: 
 ```
-echo "uname -a && id && ip address |  grep -oP '.*[\/][0-9].*' " | base64
+echo "uname -a && id && ip address |  grep -oP 'inet.*' " | base64
 ```
 
 ### example - running base64 encoded host fingerprinting one-liner:
 
 ```
-echo "dW5hbWUgLWEgJiYgaWQgJiYgaXAgYWRkcmVzcyB8ICBncmVwIC1vUCAnLipbXC9dWzAtOV0uKicgCg==" | base64 -d | bash
+echo "dW5hbWUgLWEgJiYgaWQgJiYgaXAgYWRkcmVzcyB8ICBncmVwIC1vUCAnXmluZXQuKicgCg==" | base64 -d | bash
 ```
 
 ## Related Industry Articles
