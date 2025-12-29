@@ -34,7 +34,7 @@ echo "uname -a && id && ip address |  grep -oP 'inet.*' " | base64
 ### example - running base64 encoded host fingerprinting one-liner:
 
 ```
-echo "dW5hbWUgLWEgJiYgaWQgJiYgaXAgYWRkcmVzcyB8ICBncmVwIC1vUCAnXmluZXQuKicgCg==" | base64 -d | bash
+echo "dW5hbWUgLWEgJiYgaWQgJiYgaXAgYWRkcmVzcyB8ICBncmVwIC1vUCAnaW5ldC4qJyAK" | base64 -d | bash
 ```
 
 ## Related Industry Articles
